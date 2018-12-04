@@ -18,9 +18,11 @@ public class KafkaConsumer {
     @KafkaListener(topics = {"${spring.kafka.template.default-topic}"})
     public void listen(ConsumerRecord<?, ?> record) {
         try {
+            logger.info("###################### kafka 接收的消息 ############################################");
+
             logger.info("kafka的key: " + record.key());
-            logger.info("kafka的value: " + record.value().toString());
-            //logger.info("kafka的value: " + record.value());
+            //logger.info("kafka的value: " + record.value().toString());
+            logger.info("kafka的value: " + record.value());
         } catch (Exception e) {
             logger.error("kafka接收消息异常",e);
         }

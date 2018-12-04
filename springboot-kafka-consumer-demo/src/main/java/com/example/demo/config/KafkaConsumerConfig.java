@@ -29,10 +29,10 @@ public class KafkaConsumerConfig implements WebMvcConfigurer {
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
 
-    @Bean
+    /*@Bean
     public Globals globals() {
         return new Globals();
-    }
+    }*/
 
     @Bean(name = "hostName")
     public String getHostName(){

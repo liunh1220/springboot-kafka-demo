@@ -39,10 +39,10 @@ public class KafkaProducerConfig implements WebMvcConfigurer {
         return "mybatis-demo";
     }
 
-    @Bean
+    /*@Bean
     public Globals globals() {
         return new Globals();
-    }
+    }*/
 
     /*public Map<String, Object> producerConfigs() {
         Map<String, Object> props = new HashMap<>();

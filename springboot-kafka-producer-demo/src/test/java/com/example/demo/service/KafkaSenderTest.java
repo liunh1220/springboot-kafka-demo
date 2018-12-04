@@ -4,6 +4,8 @@ import com.example.demo.BaseTest;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Date;
+
 /**
  * Created by liulanhua on 2018/9/5.
  */
@@ -14,7 +16,7 @@ public class KafkaSenderTest extends BaseTest {
 
     @Test
     public void send() throws Exception {
-        sender.send("这是Kafka发送的消息内容");
+        sender.send("这是Kafka发送的消息内容"+ new Date());
     }
 
 }
