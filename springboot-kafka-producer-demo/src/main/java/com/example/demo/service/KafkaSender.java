@@ -25,7 +25,8 @@ public class KafkaSender {
     @Autowired
     private Globals globals;
     @Resource
-    private KafkaTemplate<String,String> kafkaTemplate;
+    private KafkaTemplate<String,Object> kafkaTemplate;
+    //private KafkaTemplate<String,String> kafkaTemplate;
 
     /**
      * 发送消息方法
@@ -36,13 +37,14 @@ public class KafkaSender {
             String uuid = UUID.randomUUID().toString();
             String topic = globals.getTopic();
 
-            /*Message message = new Message();
+            Message message = new Message();
             message.setId(uuid);
             message.setMsg(msg);
             message.setSendTime(new Date());
-            String jsonMsg = JSONObject.toJSONString(message);*/
+            kafkaTemplate.send(topic, uuid, message);
 
-            kafkaTemplate.send(topic, uuid, msg);
+//            String jsonMsg = JSONObject.toJSONString(message);
+//            kafkaTemplate.send(topic, uuid, msg);
 
         }catch (Exception e){
             logger.error("KafkaSender发送消息异常",e);
