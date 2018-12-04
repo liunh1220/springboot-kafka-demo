@@ -20,6 +20,7 @@ public class KafkaConsumer {
         try {
             logger.info("kafka的key: " + record.key());
             logger.info("kafka的value: " + record.value().toString());
+            //logger.info("kafka的value: " + record.value());
         } catch (Exception e) {
             logger.error("kafka接收消息异常",e);
         }

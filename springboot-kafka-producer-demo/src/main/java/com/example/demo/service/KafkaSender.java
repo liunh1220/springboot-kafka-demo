@@ -25,8 +25,8 @@ public class KafkaSender {
     @Autowired
     private Globals globals;
     @Resource
-    private KafkaTemplate<String,Object> kafkaTemplate;
-    //private KafkaTemplate<String,String> kafkaTemplate;
+    private KafkaTemplate<String,String> kafkaTemplate;
+    //private KafkaTemplate<String,Object> kafkaTemplate;
 
     /**
      * 发送消息方法
