@@ -41,10 +41,9 @@ public class KafkaSender {
             message.setId(uuid);
             message.setMsg(msg);
             message.setSendTime(new Date());
-            kafkaTemplate.send(topic, uuid, message);
 
-//            String jsonMsg = JSONObject.toJSONString(message);
-//            kafkaTemplate.send(topic, uuid, msg);
+            //kafkaTemplate.send(topic, uuid, message);
+            kafkaTemplate.send(topic, uuid, JSONObject.toJSONString(message));
 
         }catch (Exception e){
             logger.error("KafkaSender发送消息异常",e);
