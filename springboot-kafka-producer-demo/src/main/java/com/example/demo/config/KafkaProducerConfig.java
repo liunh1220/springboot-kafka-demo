@@ -5,6 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.net.InetAddress;
@@ -16,7 +17,8 @@ import java.net.UnknownHostException;
 @Configuration
 @ComponentScan({"com.example.demo"})
 @EnableKafka
-public class KafkaProducerConfig extends WebMvcConfigurerAdapter {
+public class KafkaProducerConfig implements WebMvcConfigurer {
+
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
