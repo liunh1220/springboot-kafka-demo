@@ -26,7 +26,7 @@ public class KafkaController {
         try {
             String message = "kafka的消息 "+ new Date();
             logger.info("kafka的消息={}", message);
-            kafkaSender.send(message);
+            kafkaSender.send(null, message);
             return "发送kafka成功";
         } catch (Exception e) {
             logger.error("发送kafka失败", e);

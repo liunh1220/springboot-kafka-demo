@@ -20,9 +20,15 @@ public class KafkaConsumer {
         try {
             logger.info("###################### kafka 接收的消息 ############################################");
 
+            logger.info("kafka的partition: " + record.partition());
+            logger.info("kafka的topic: " + record.topic());
             logger.info("kafka的key: " + record.key());
             //logger.info("kafka的value: " + record.value().toString());
             logger.info("kafka的value: " + record.value());
+
+            //TODO 业务代码
+
+
         } catch (Exception e) {
             logger.error("kafka接收消息异常",e);
         }
